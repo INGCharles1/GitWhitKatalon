@@ -31,5 +31,6 @@ WebUI.setText(findTestObject('BuscadorDiccionario'), 'ADN')
 
 WebUI.sendKeys(findTestObject('BuscadorDiccionario'), Keys.chord(Keys.ENTER))
 
-WebUI.verifyElementText(findTestObject('DefinicionADN'), 'Sigla de ácido desoxirribonucleico, proteína compleja que se encuentra en el núcleo de las células y constituye el principal constituyente del material genético de los seres vivos.')
+'sigue siendo un comentario\r\n'
+WebUI.comment('')
 
