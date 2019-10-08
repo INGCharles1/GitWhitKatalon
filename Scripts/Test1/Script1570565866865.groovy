@@ -12,10 +12,24 @@ import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
 
 WebUI.navigateToUrl('www.google.com')
 
 WebUI.setText(findTestObject('BuscadorGoogle'), 'diccionario')
+
+WebUI.sendKeys(findTestObject('BuscadorGoogle'), Keys.chord(Keys.ENTER))
+
+'Verificamos la precencia del TextBox para buscar en el diccionario\r\n'
+WebUI.comment('')
+
+WebUI.verifyElementPresent(findTestObject('BuscadorDiccionario'), 0)
+
+WebUI.setText(findTestObject('BuscadorDiccionario'), 'ADN')
+
+WebUI.sendKeys(findTestObject('BuscadorDiccionario'), Keys.chord(Keys.ENTER))
+
+WebUI.verifyElementText(findTestObject('DefinicionADN'), 'Sigla de ácido desoxirribonucleico, proteína compleja que se encuentra en el núcleo de las células y constituye el principal constituyente del material genético de los seres vivos.')
 
